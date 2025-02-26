@@ -34,4 +34,9 @@ public class GreetingController
         return greetingService.getAllGreetings();
     }
 
+    @PutMapping
+    public Greeting updateGreeting(@RequestBody Greeting greeting) {
+        return greetingService.updateGreeting(greeting);
+    }
+
 }

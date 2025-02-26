@@ -40,4 +40,8 @@ public class GreetingService {
     public List<Greeting> getAllGreetings() {
         return greetingRepository.findAll();
     }
+
+    public Greeting updateGreeting(Greeting greeting) {
+        return greetingRepository.save(greeting);
+    }
 }
