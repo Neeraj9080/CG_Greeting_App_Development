@@ -18,17 +18,8 @@ public class GreetingController
     }
 
     @PostMapping
-    public String createGreeting() {
-        return "Greeting created";
+    public Greeting createGreeting(@RequestBody Greeting greeting) {
+        return greetingService.saveGreeting(greeting);
     }
 
-    @PutMapping
-    public String updateGreeting() {
-        return "Greeting updated";
-    }
-
-    @DeleteMapping
-    public String deleteGreeting() {
-        return "Greeting deleted";
-    }
 }

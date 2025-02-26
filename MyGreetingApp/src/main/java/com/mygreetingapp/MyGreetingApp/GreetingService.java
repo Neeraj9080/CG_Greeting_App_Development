@@ -5,6 +5,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class GreetingService {
 
+    private final GreetingRepository greetingRepository;
+
+    public GreetingService(GreetingRepository greetingRepository) {
+        this.greetingRepository = greetingRepository;
+    }
+
     public String getGreeting() {
         return "Hello World";
     }
@@ -19,5 +25,9 @@ public class GreetingService {
         } else {
             return "Hello World";
         }
+    }
+
+    public Greeting saveGreeting(Greeting greeting) {
+        return greetingRepository.save(greeting);
     }
 }
